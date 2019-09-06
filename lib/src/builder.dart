@@ -128,7 +128,7 @@ class MarkdownBuilder implements md.NodeVisitor {
 
     _addParentInlineIfNeeded(_blocks.last.tag);
     String str =
-        text.text.trim().replaceAllMapped(RegExp("([^\n])\n([^\n])"), (match) {
+        text.text.replaceAllMapped(RegExp("([^\n])\n([^\n])"), (match) {
       return "${match.group(1)} ${match.group(2)}";
     });
     final TextSpan span = _blocks.last.tag == 'pre'
